@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Route } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { DemoAppComponent } from './demo-app.component';
 import { BasicExampleComponent } from './components/basic-example/basic-example.component';
@@ -18,7 +18,7 @@ import { DocumentationPageComponent } from './components/documentation/documenta
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { HttpClientModule } from '@angular/common/http';
 
-const ConfiguredRouterModule = RouterModule.forRoot([
+const ConfiguredRouterModule: Route = RouterModule.forRoot([
   {path: '', pathMatch: 'full', component: DocumentationPageComponent},
   {path: 'basic', component: BasicPageComponent},
   {path: 'advanced', component: AdvancedPageComponent},
