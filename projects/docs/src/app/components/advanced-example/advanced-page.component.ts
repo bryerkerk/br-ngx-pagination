@@ -13,6 +13,7 @@ export class AdvancedPageComponent {
 
     constructor(private mealsService: MealsService) {
         this.meals = mealsService.getMeals();
+        
     }
 }
 
