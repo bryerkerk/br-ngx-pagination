@@ -18,19 +18,19 @@ import { DocumentationPageComponent } from './components/documentation/documenta
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { HttpClientModule } from '@angular/common/http';
 
-const ConfiguredRouterModule: Route = RouterModule.forRoot([
+const routes: Route[] = [
   {path: '', pathMatch: 'full', component: DocumentationPageComponent},
   {path: 'basic', component: BasicPageComponent},
   {path: 'advanced', component: AdvancedPageComponent},
   {path: 'custom-template', component: CustomPageComponent},
   {path: 'server-paging', component: ServerPageComponent}
-], {useHash: true});
+];
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    ConfiguredRouterModule,
+    RouterModule.forRoot(routes, { useHash: true }),
     NgxPaginationModule,
     HighlightModule,
     HttpClientModule,
